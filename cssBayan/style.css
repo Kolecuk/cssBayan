@@ -56,11 +56,73 @@ h1:hover {
 	width: 10vw;
 }
 
+.main--wrapper {
+	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677);
+}
 
+.accordion {
+	margin: 0 5vw;
+}
+
+.accordion--item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677);
+	/* border-top: 0.2vw solid rgba(22, 103, 84, 0.677); */
+	cursor: pointer;
+}
+
+.accordion--item:first-child {
+	border-top: none;
+}
+
+.accordion--item-text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+
+	padding: 0.5vw 2vw;
+	font-family: "Roboto-Bold", sans-serif;
+	font-size: 1.5vw;
+	color: rgba(22, 103, 84, 0.677);
+	cursor: pointer;
+}
+
+
+
+.accordion--item-text::after {
+	content: '\002B';
+	font-size: 1.5vw;
+}
+
+.accordion--item-icon {
+	display: none;
+}
+
+.accordion--item-img {
+	display: block;
+	width: 40vw;
+	padding: 1vw;
+	display: none;
+}
+
+.accordion--item-icon:checked ~ .accordion--item-text {
+	color: rgb(0, 0, 0);
+}
+
+.accordion--item-icon:checked ~ .accordion--item-text::after {
+	transform: rotate(45deg);
+}
+
+.accordion--item-icon:checked ~ .accordion--item-img {
+	display: block;
+}
 
 ul {
 	display: flex;
-	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
 	list-style: none;
