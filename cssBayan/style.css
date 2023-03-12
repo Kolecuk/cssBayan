@@ -2,6 +2,7 @@
 	font-family: Roboto-Bold;
 	src: url("../cssBayan/assets/fonts/Roboto/Roboto-Bold.ttf");
 }
+
 * {
 	margin: 0;
 	padding: 0;
@@ -14,4 +15,43 @@ html {
 
 body {
 	max-width: 100%;
+}
+
+header {
+	background-color: rgba(41, 204, 166, 0.5);
+}
+
+.wrapper {
+	padding: 1vw 15vw;
+}
+
+.header--wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677);
+}
+
+h1 {
+	display: inline;
+	flex-grow: 1;
+	text-align: center;
+	padding-right: 10vw;
+	/* flex-grow, text align, padding-rigth взяты, чтобы поместить текст по центру. padding-rigth = .logo {width}*/
+	font-family: "Roboto-Bold", sans-serif;
+	font-size: 3vw;
+	-webkit-text-fill-color: transparent;
+	/* transparent дает прозрачный текст */
+	-webkit-text-stroke: 0.1vw rgba(0, 0, 0, 1);
+		/* -webkit-text-stroke цвет текста по периметру */
+	text-shadow: -0.2vw -0.1vw rgba(0, 0, 0, 1);
+}
+
+h1:hover {
+	-webkit-text-stroke: 0.1vw rgba(255, 255, 255, 0.859);
+	text-shadow: -0.2vw -0.1vw rgba(255, 255, 255, 0.859);
+}
+
+.logo {
+	width: 10vw;
 }
