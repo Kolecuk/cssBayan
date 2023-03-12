@@ -17,7 +17,7 @@ body {
 	max-width: 100%;
 }
 
-header {
+header, footer {
 	background-color: rgba(41, 204, 166, 0.5);
 }
 
@@ -43,7 +43,7 @@ h1 {
 	-webkit-text-fill-color: transparent;
 	/* transparent дает прозрачный текст */
 	-webkit-text-stroke: 0.1vw rgba(0, 0, 0, 1);
-		/* -webkit-text-stroke цвет текста по периметру */
+	/* -webkit-text-stroke цвет текста по периметру */
 	text-shadow: -0.2vw -0.1vw rgba(0, 0, 0, 1);
 }
 
@@ -54,4 +54,27 @@ h1:hover {
 
 .logo {
 	width: 10vw;
+}
+
+
+
+ul {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+}
+
+li {
+	font-family: "Roboto-Bold", sans-serif;
+	font-size: 1vw;
+}
+
+.link-footer {
+	height: 2vw;
+}
+
+.link-footer:last-child {
+	margin-left: 2vw;
 }
