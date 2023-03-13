@@ -67,19 +67,11 @@ main {
 	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677), 0 -0.2vw 0.2vw rgba(22, 103, 84, 0.677);
 }
 
-.accordion {
-	cursor: pointer;
-}
-
 @media (hover:hover) and (pointer: fine) {
-	.accordion:hover .accordion--item-text{
+	.accordion:hover .accordion--item-content{
 		color: rgba(0, 0, 0, 1);
 	}
-}
-/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает */
-
-@media (hover:hover) and (pointer: fine) {
-	.accordion:hover .marker {
+	.accordion:hover .content-marker {
 		color: rgba(0, 0, 0, 1);
 	}
 }
@@ -93,76 +85,75 @@ main {
 	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677);
 }
 
-/* .accordion--item:first-child {
-	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677), 0 -0.2vw 0.2vw rgba(22, 103, 84, 0.677);
-} */
-
-.accordion--item-text {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	padding: 0.5vw 2vw;
-	font-family: "Roboto-Bold", sans-serif;
-	font-size: 1.5vw;
-	color: rgba(22, 103, 84, 0.677);
-	cursor: pointer;
-	transition: color 1s;
-}
-
 @media (hover:hover) and (pointer: fine) {
-	.accordion--item-text:hover + .accordion--item-img {
+	.accordion--item:hover .content-img {
 		width: 40vw;
 		padding: 1vw;
 	}
-}
-/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает */
-
-@media (hover:hover) and (pointer: fine) {
-	.accordion--item-text:hover .marker {
+	.accordion--item:hover .content-marker {
 		transform: rotate(45deg);
 	}
 }
 /* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает */
 
-.marker {
-	color: rgba(0, 0, 0, 0);
-	/* transition: color 1s;
-	transition: transform 1s;
-	почему-то не работает transition: color, а transition: transform работает.
-	может потому, что span лежит в .accordion--item-text, а у него свой transition: color */
-	transition: all 1s;
-}
-
-@media (hover: none) {
-	.marker {
-		color: rgba(0, 0, 0, 1);
-	}
-}
-/* @media (hover:none) чтобы показать крестики но мобилках */
+/* .accordion--item:first-child {
+	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677), 0 -0.2vw 0.2vw rgba(22, 103, 84, 0.677);
+} */
 
 .accordion--item-icon {
 	display: none;
 }
 
-.accordion--item-img {
-	width: 0;
-	transition: all 1s;
-}
-
-.accordion--item-icon:checked ~ .accordion--item-text {
+.accordion--item-icon:checked ~ .accordion--item-box .accordion--item-content {
 	color: rgba(0, 0, 0, 1);
 }
 
-	/* .accordion--item-icon:checked .marker {
-	почему-то так не работает, в отличии от .accordion:hover .marker */
-	.accordion--item-icon:checked ~ .accordion--item-text span {
+.accordion--item-icon:checked ~ .accordion--item-box .content-marker {
 	transform: rotate(45deg);
 }
 
-.accordion--item-icon:checked ~ .accordion--item-img {
+.accordion--item-icon:checked ~ .accordion--item-box .content-img {
 	width: 40vw;
 	padding: 1vw;
+}
+
+.accordion--item-box {
+	width: 100%;
+	cursor: pointer;
+}
+
+.accordion--item-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5vw 2vw;
+	font-family: "Roboto-Bold", sans-serif;
+	font-size: 1.5vw;
+	color: rgba(22, 103, 84, 0.677);
+	transition: color 1s;
+}
+
+.content-marker {
+	color: rgba(0, 0, 0, 0);
+	/* transition: color 1s;
+	transition: transform 1s;
+	почему-то не работает transition: color, а transition: transform работает.
+	может потому, что span лежит в .accordion--item-content, а у него свой transition: color */
+	transition: all 1s;
+}
+
+@media (hover: none) {
+	.content-marker {
+		color: rgba(0, 0, 0, 1);
+	}
+}
+/* @media (hover:none) чтобы показать крестики но мобилках */
+
+.content-img {
+	display: block;
+	margin: 0 auto;
+	width: 0;
+	transition: all 1s;
 }
 
 ul {
