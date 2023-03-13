@@ -62,6 +62,18 @@ h1:hover {
 
 .accordion {
 	margin: 0 5vw;
+	cursor: pointer;
+}
+
+.accordion:hover .accordion--item-text{
+	color: rgba(0, 0, 0, 1);
+}
+
+/* .accordion:hover .accordion--item-text::after { */
+.accordion:hover .accordion--item-text span {
+	/* color: rgba(0, 0, 0, 1); */
+	width: 1.5vw;
+	height: 1.5vw;
 }
 
 .accordion--item {
@@ -71,7 +83,6 @@ h1:hover {
 	align-items: center;
 	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677);
 	/* border-top: 0.2vw solid rgba(22, 103, 84, 0.677); */
-	cursor: pointer;
 }
 
 .accordion--item:first-child {
@@ -89,13 +100,28 @@ h1:hover {
 	font-size: 1.5vw;
 	color: rgba(22, 103, 84, 0.677);
 	cursor: pointer;
+	transition: color 1s;
 }
 
+.accordion--item-text:hover + .accordion--item-img {
+	width: 40vw;
+	padding: 1vw;
+}
+
+/* .accordion--item-text::after { */
+.accordion--item-text span {
+	display: inline;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	/* content: '\002B'; */
+	color: rgba(0, 0, 0, 1);
 
 
-.accordion--item-text::after {
-	content: '\002B';
-	font-size: 1.5vw;
+	/* font-size: 1.5vw; */
+	transition: width 1s;
+	transition: height 1s;
+	transition: transform 1s;
 }
 
 .accordion--item-icon {
@@ -103,22 +129,22 @@ h1:hover {
 }
 
 .accordion--item-img {
-	display: block;
-	width: 40vw;
-	padding: 1vw;
-	display: none;
+	width: 0;
+	transition: all 1s;
 }
 
 .accordion--item-icon:checked ~ .accordion--item-text {
-	color: rgb(0, 0, 0);
+	color: rgba(0, 0, 0, 1);
 }
 
-.accordion--item-icon:checked ~ .accordion--item-text::after {
+/* .accordion--item-icon:checked ~ .accordion--item-text::after { */
+.accordion--item-icon:checked ~ .accordion--item-text span {
 	transform: rotate(45deg);
 }
 
 .accordion--item-icon:checked ~ .accordion--item-img {
-	display: block;
+	width: 40vw;
+	padding: 1vw;
 }
 
 ul {
