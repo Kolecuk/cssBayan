@@ -48,10 +48,13 @@ h1 {
 	cursor: default;
 }
 
-h1:hover {
-	-webkit-text-stroke: 0.1vw rgba(255, 255, 255, 0.859);
-	text-shadow: -0.2vw -0.1vw rgba(255, 255, 255, 0.859);
+@media (hover:hover) and (pointer: fine) {
+	h1:hover {
+		-webkit-text-stroke: 0.1vw rgba(255, 255, 255, 0.859);
+		text-shadow: -0.2vw -0.1vw rgba(255, 255, 255, 0.859);
+	}
 }
+/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает*/
 
 .logo {
 	width: 10vw;
@@ -66,13 +69,19 @@ h1:hover {
 	cursor: pointer;
 }
 
-.accordion:hover .accordion--item-text{
-	color: rgba(0, 0, 0, 1);
+@media (hover:hover) and (pointer: fine) {
+	.accordion:hover .accordion--item-text{
+		color: rgba(0, 0, 0, 1);
+	}
 }
+/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает*/
 
-.accordion:hover .accordion--item-text span {
-	color: rgba(0, 0, 0, 1);
+@media (hover:hover) and (pointer: fine) {
+	.accordion:hover .marker {
+		color: rgba(0, 0, 0, 1);
+	}
 }
+/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает*/
 
 .accordion--item {
 	display: flex;
@@ -100,12 +109,22 @@ h1:hover {
 	transition: color 1s;
 }
 
-.accordion--item-text:hover + .accordion--item-img {
-	width: 40vw;
-	padding: 1vw;
+@media (hover:hover) and (pointer: fine) {
+	.accordion--item-text:hover + .accordion--item-img {
+		width: 40vw;
+		padding: 1vw;
+	}
 }
+/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает*/
 
-.accordion--item-text span {
+@media (hover:hover) and (pointer: fine) {
+	.accordion--item-text:hover .marker {
+		transform: rotate(45deg);
+	}
+}
+/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает*/
+
+.marker {
 	color: rgba(0, 0, 0, 0);
 	/* transition: color 1s;
 	transition: transform 1s;
@@ -113,6 +132,13 @@ h1:hover {
 	может потому, что span лежит в .accordion--item-text, а у него свой transition: color*/
 	transition: all 1s;
 }
+
+@media (hover: none) {
+	.marker {
+		color: rgba(0, 0, 0, 1);
+	}
+}
+/* @media (hover:none) чтобы показать крестики но мобилках*/
 
 .accordion--item-icon {
 	display: none;
@@ -127,7 +153,9 @@ h1:hover {
 	color: rgba(0, 0, 0, 1);
 }
 
-.accordion--item-icon:checked ~ .accordion--item-text span {
+	/* .accordion--item-icon:checked .marker {
+	почему-то так не работает, в отличии от .accordion:hover .marker */
+	.accordion--item-icon:checked ~ .accordion--item-text span {
 	transform: rotate(45deg);
 }
 
