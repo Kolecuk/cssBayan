@@ -45,6 +45,7 @@ h1 {
 	-webkit-text-stroke: 0.1vw rgba(0, 0, 0, 1);
 	/* -webkit-text-stroke цвет текста по периметру */
 	text-shadow: -0.2vw -0.1vw rgba(0, 0, 0, 1);
+	cursor: default;
 }
 
 h1:hover {
@@ -69,11 +70,8 @@ h1:hover {
 	color: rgba(0, 0, 0, 1);
 }
 
-/* .accordion:hover .accordion--item-text::after { */
 .accordion:hover .accordion--item-text span {
-	/* color: rgba(0, 0, 0, 1); */
-	width: 1.5vw;
-	height: 1.5vw;
+	color: rgba(0, 0, 0, 1);
 }
 
 .accordion--item {
@@ -94,7 +92,6 @@ h1:hover {
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-
 	padding: 0.5vw 2vw;
 	font-family: "Roboto-Bold", sans-serif;
 	font-size: 1.5vw;
@@ -108,20 +105,13 @@ h1:hover {
 	padding: 1vw;
 }
 
-/* .accordion--item-text::after { */
 .accordion--item-text span {
-	display: inline;
-	width: 0;
-	height: 0;
-	overflow: hidden;
-	/* content: '\002B'; */
-	color: rgba(0, 0, 0, 1);
-
-
-	/* font-size: 1.5vw; */
-	transition: width 1s;
-	transition: height 1s;
+	color: rgba(0, 0, 0, 0);
+	/* transition: color 1s;
 	transition: transform 1s;
+	почему-то не работает transition: color, а transition: transform работает.
+	может потому, что span лежит в .accordion--item-text, а у него свой transition: color*/
+	transition: all 1s;
 }
 
 .accordion--item-icon {
@@ -137,7 +127,6 @@ h1:hover {
 	color: rgba(0, 0, 0, 1);
 }
 
-/* .accordion--item-icon:checked ~ .accordion--item-text::after { */
 .accordion--item-icon:checked ~ .accordion--item-text span {
 	transform: rotate(45deg);
 }
