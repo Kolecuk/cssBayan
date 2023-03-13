@@ -29,7 +29,6 @@ header, footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677);
 }
 
 h1 {
@@ -37,7 +36,7 @@ h1 {
 	flex-grow: 1;
 	text-align: center;
 	padding-right: 10vw;
-	/* flex-grow, text align, padding-rigth взяты, чтобы поместить текст по центру. padding-rigth = .logo {width}*/
+	/* flex-grow, text align, padding-rigth взяты, чтобы поместить текст по центру. padding-rigth = .logo {width} */
 	font-family: "Roboto-Bold", sans-serif;
 	font-size: 3vw;
 	-webkit-text-fill-color: transparent;
@@ -54,18 +53,21 @@ h1 {
 		text-shadow: -0.2vw -0.1vw rgba(255, 255, 255, 0.859);
 	}
 }
-/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает*/
+/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает */
 
 .logo {
 	width: 10vw;
 }
 
+main {
+	background-color: rgba(255, 255, 255, 0.859);
+}
+
 .main--wrapper {
-	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677);
+	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677), 0 -0.2vw 0.2vw rgba(22, 103, 84, 0.677);
 }
 
 .accordion {
-	margin: 0 5vw;
 	cursor: pointer;
 }
 
@@ -74,14 +76,14 @@ h1 {
 		color: rgba(0, 0, 0, 1);
 	}
 }
-/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает*/
+/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает */
 
 @media (hover:hover) and (pointer: fine) {
 	.accordion:hover .marker {
 		color: rgba(0, 0, 0, 1);
 	}
 }
-/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает*/
+/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает */
 
 .accordion--item {
 	display: flex;
@@ -89,12 +91,11 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677);
-	/* border-top: 0.2vw solid rgba(22, 103, 84, 0.677); */
 }
 
-.accordion--item:first-child {
-	border-top: none;
-}
+/* .accordion--item:first-child {
+	box-shadow: 0 0.2vw 0.2vw rgba(22, 103, 84, 0.677), 0 -0.2vw 0.2vw rgba(22, 103, 84, 0.677);
+} */
 
 .accordion--item-text {
 	display: flex;
@@ -115,21 +116,21 @@ h1 {
 		padding: 1vw;
 	}
 }
-/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает*/
+/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает */
 
 @media (hover:hover) and (pointer: fine) {
 	.accordion--item-text:hover .marker {
 		transform: rotate(45deg);
 	}
 }
-/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает*/
+/* @media (hover:hover) and (pointer: fine) для ноутбуков hover работает */
 
 .marker {
 	color: rgba(0, 0, 0, 0);
 	/* transition: color 1s;
 	transition: transform 1s;
 	почему-то не работает transition: color, а transition: transform работает.
-	может потому, что span лежит в .accordion--item-text, а у него свой transition: color*/
+	может потому, что span лежит в .accordion--item-text, а у него свой transition: color */
 	transition: all 1s;
 }
 
@@ -138,7 +139,7 @@ h1 {
 		color: rgba(0, 0, 0, 1);
 	}
 }
-/* @media (hover:none) чтобы показать крестики но мобилках*/
+/* @media (hover:none) чтобы показать крестики но мобилках */
 
 .accordion--item-icon {
 	display: none;
