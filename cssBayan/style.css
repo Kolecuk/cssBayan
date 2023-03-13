@@ -172,6 +172,42 @@ li {
 	height: 2vw;
 }
 
-.link-footer:last-child {
+.last {
 	margin-left: 2vw;
+}
+
+@media (max-width: 2000px) {
+	h1 {
+		font-size: 3.2rem;
+	}
+	.accordion--item-content {
+		font-size: 1.4rem;
+	}
+	li {
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: 1000px) {
+	h1 {
+		font-size: 1.6rem;
+	}
+	.accordion--item-content {
+		font-size: 0.6rem;
+	}
+	li {
+		font-size: 0.4rem;
+	}
+}
+
+@media (max-width: 400px) {
+	h1 {
+		font-size: 0.7rem;
+	}
+	.accordion--item-content {
+		font-size: 0.3rem;
+	}
+	li {
+		font-size: 0.2rem;
+	}
 }
